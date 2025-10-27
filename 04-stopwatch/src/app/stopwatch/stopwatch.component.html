@@ -1,0 +1,10 @@
+<div class="stopwatch">
+    <h1>Stopwatch</h1>
+    <p>Elapsed Time: {{ elapsedTime }} seconds</p>
+    @if (isRunning) {
+        <button class="stop-button" (click)="stop()">Stop</button>
+    } @else {
+        <button class="start-button" (click)="start()">Start</button>    
+    }
+    <button class="reset-button" (click)="reset()">Reset</button>
+</div>
