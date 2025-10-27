@@ -1,0 +1,11 @@
+<div class="profile-card">
+  <h2>Profile Card</h2>
+  <p><strong>Name:</strong> {{ Name }}</p>
+  <p><strong>Age:</strong> {{ Age }}</p>
+  <p><strong>Description:</strong> {{ Description }}</p>
+
+  <h3>Update Profile</h3>
+  <input type="text" [(ngModel)]="Name" placeholder="Enter Name" />
+  <input type="number" [(ngModel)]="Age" placeholder="Enter Age" />
+  <input type="text" [(ngModel)]="Description" placeholder="Enter Description" />
+</div>
