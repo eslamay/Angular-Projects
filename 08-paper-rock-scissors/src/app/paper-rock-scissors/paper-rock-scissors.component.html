@@ -1,0 +1,36 @@
+<div class="game-container">
+  <h1>Rock Paper Scissors</h1>
+  <div class="choices">
+    <button (click)="play('rock')">
+      <img src="rock.png" alt="Rock" />
+    </button>
+    <button (click)="play('paper')">
+      <img src="paper.png" alt="Paper" />
+    </button>
+    <button (click)="play('scissors')">
+      <img src="scissors.png" alt="Scissors" />
+    </button>
+  </div>
+  <div class="choice">
+    <p class="user-choice" *ngIf="userChoice">
+      You chose:
+      <img
+        src="{{ userChoice }}.png"
+        alt="{{ userChoice }}"
+      />
+    </p>
+    <p class="computer-choice" *ngIf="computerChoice">
+      Computer chose:
+      <img
+        src="{{ computerChoice }}.png"
+        alt="{{ computerChoice }}"
+      />
+    </p>
+  </div>
+  <div class="result">
+    <p class="win" *ngIf="result === 'win'">You win!</p>
+    <p class="lose" *ngIf="result === 'lose'">You lose!</p>
+    <p class="draw" *ngIf="result === 'draw'">It's a draw!</p>
+  </div>
+  <button class="reset-button" (click)="reset()">Reset</button>
+</div>

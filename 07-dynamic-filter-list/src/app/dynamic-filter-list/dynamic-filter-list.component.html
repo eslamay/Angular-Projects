@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Dynamic Filter List</h2>
+  <input
+    type="text"
+    placeholder="Type to filter..."
+    [(ngModel)]="searchText"
+    class="filter-input"
+  />
+  <ul class="item-list">
+    <li *ngFor="let item of filteredItems" class="item">
+      {{ item }}
+    </li>
+  </ul>
+
+</div>
