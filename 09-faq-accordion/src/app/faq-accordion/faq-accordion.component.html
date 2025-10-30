@@ -1,0 +1,10 @@
+<div class="faq-accordion">
+    <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+        <div class="faq-question" (click)="toggle(i)" [class.open]="openIndex === i">
+            {{ faq.question }}
+        </div>
+        <div class="faq-answer" [class.open]="openIndex === i" @slideToggle>
+            {{ faq.answer }}
+        </div>
+    </div>
+</div>

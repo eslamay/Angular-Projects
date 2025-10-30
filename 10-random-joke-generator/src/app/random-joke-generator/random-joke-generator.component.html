@@ -1,0 +1,10 @@
+<div class="joke-container">
+  <h2>Here's a Random Joke for You!</h2>
+  <button (click)="getRandomJoke()">Get Joke</button>
+  <div class="joke" *ngIf="joke">
+    <p class="setup">
+      <strong>{{ joke.setup }}</strong>
+    </p>
+    <p class="punchline">{{ joke.punchline }}</p>
+  </div>
+</div>
