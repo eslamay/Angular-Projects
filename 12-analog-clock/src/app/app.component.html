@@ -1,0 +1,25 @@
+<div class="clock">
+  <div class="clock-face">
+    <div 
+      class="number" 
+      *ngFor="let number of clockNumbers" 
+      [style.top.%]="number.x" 
+      [style.left.%]="number.y"
+    >
+      {{number.hour}}
+    </div>
+
+    <div 
+      class="hand hour-hand" 
+      [style.transform]="'translate(-50%, -50%) rotate(' + (hours * 30 + minutes * 0.5) + 'deg)'"
+    ></div>
+    <div 
+      class="hand minute-hand" 
+      [style.transform]="'translate(-50%, -50%) rotate(' + (minutes * 6) + 'deg)'"
+    ></div>
+    <div 
+      class="hand second-hand" 
+      [style.transform]="'translate(-50%, -50%) rotate(' + (seconds * 6) + 'deg)'"
+    ></div>
+  </div>
+</div>
