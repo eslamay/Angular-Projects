@@ -1,0 +1,31 @@
+<div class="calculator">
+  <div class="display">
+    <input type="text" [value]="display" readonly class="display-input">
+  </div>
+  
+  <div class="buttons">
+    <button class="btn btn-function" (click)="clear()">AC</button>
+    <button class="btn btn-function" (click)="toggleSign()">+/-</button>
+    <button class="btn btn-function" (click)="handlePercent()">%</button>
+    <button class="btn btn-operator" (click)="handleOperator('/')">/</button>
+
+    <button class="btn" (click)="handleNumber('7')">7</button>
+    <button class="btn" (click)="handleNumber('8')">8</button>
+    <button class="btn" (click)="handleNumber('9')">9</button>
+    <button class="btn btn-operator" (click)="handleOperator('*')">*</button>
+
+    <button class="btn" (click)="handleNumber('4')">4</button>
+    <button class="btn" (click)="handleNumber('5')">5</button>
+    <button class="btn" (click)="handleNumber('6')">6</button>
+    <button class="btn btn-operator" (click)="handleOperator('-')">-</button>
+
+    <button class="btn" (click)="handleNumber('1')">1</button>
+    <button class="btn" (click)="handleNumber('2')">2</button>
+    <button class="btn" (click)="handleNumber('3')">3</button>
+    <button class="btn btn-operator" (click)="handleOperator('+')">+</button>
+
+    <button class="btn btn-zero" (click)="handleNumber('0')">0</button>
+    <button class="btn" (click)="handleDecimal()">.</button>
+    <button class="btn btn-equals" (click)="calculate()">=</button>
+  </div>
+</div>
