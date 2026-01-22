@@ -1,0 +1,55 @@
+<div class="currency-converter">
+  <h1>💱 Currency Converter</h1>
+  <p class="subtitle">
+    Convert between currencies instantly using live exchange rates
+  </p>
+
+  <div class="currency-row">
+    <!-- FROM -->
+    <div class="currency-card">
+      <label>From</label>
+      <select [(ngModel)]="fromCurrency" (change)="convertCurrency()">
+        <option *ngFor="let currency of currencies" [value]="currency">
+          <img
+            [src]="
+              'https://flagcdn.com/w20/' + getCountryCode(currency) + '.png'
+            "
+            alt="{{ currency }} Flag"
+          />
+          {{ currency }}
+        </option>
+      </select>
+
+      <input
+        type="number"
+        placeholder="Enter amount"
+        [(ngModel)]="amount"
+        (input)="convertCurrency()"
+      />
+    </div>
+
+    <!-- TO -->
+    <div class="currency-card">
+      <label>To</label>
+      <select [(ngModel)]="toCurrency" (change)="convertCurrency()">
+        <option *ngFor="let currency of currencies" [value]="currency">
+          <img
+            [src]="
+              'https://flagcdn.com/w20/' + getCountryCode(currency) + '.png'
+            "
+            alt="{{ currency }} Flag"
+          />{{ currency }}
+        </option>
+      </select>
+
+      <input
+        type="number"
+        [value]="convertedAmount"
+        placeholder="Result"
+        readonly
+      />
+    </div>
+  </div>
+
+  <button class="convert-button" (click)="convertCurrency()">Convert 🔄</button>
+</div>
