@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color:#121212;
+    --input-bg-color:#333333;
+    --input-border-color:#555555;
+    --emoji-item-border-color:#444444;
+    --emoji-item-hover-bg-color:#555555;
+    --text-color:#FFFFFF;
+    --notification-bg-color:#0a003b;
+}
+
+.light-theme {
+    --bg-color:#FFFFFF;
+    --input-bg-color:#F0F0F0;
+    --input-border-color:#CCCCCC;
+    --emoji-item-border-color:#DDDDDD;
+    --emoji-item-hover-bg-color:#EEEEEE;
+    --text-color:#000000;
+    --notification-bg-color:#9ae9ff;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial,sans-serif;
+}
