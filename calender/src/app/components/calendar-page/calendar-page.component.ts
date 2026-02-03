@@ -1,11 +1,51 @@
 import { Component } from '@angular/core';
+import { CalendarService } from '../../services/calendar.service';
+import { CommonModule } from '@angular/common';
+import { DayCardComponent } from '../day-card/day-card.component';
 
 @Component({
   selector: 'app-calendar-page',
-  imports: [],
+  imports: [CommonModule, DayCardComponent],
   templateUrl: './calendar-page.component.html',
   styleUrl: './calendar-page.component.scss'
 })
 export class CalendarPageComponent {
+ days: Date[] = [];
+  currentMonth: number = new Date().getMonth();
+  currentYear: number = new Date().getFullYear();
 
+  constructor(private calendarService: CalendarService) {}
+
+  loadMonth(year: number, month: number) {
+    this.days = this.calendarService.getDaysInMonth(year, month);
+  }
+
+  ngOnInit() {
+    this.loadMonth(this.currentYear, this.currentMonth);
+  }
+
+  nextMonth() {
+    const { newYear, newMonth } = this.calendarService.nextMonth(
+      this.currentYear,
+      this.currentMonth
+    );
+    this.currentYear = newYear;
+    this.currentMonth = newMonth;
+    this.loadMonth(this.currentYear, this.currentMonth);
+  }
+
+  previousMonth() {
+    const { newYear, newMonth } = this.calendarService.previousMonth(
+      this.currentYear,
+      this.currentMonth
+    );
+    this.currentYear = newYear;
+    this.currentMonth = newMonth;
+    this.loadMonth(this.currentYear, this.currentMonth);
+  }
+
+  getMonthAndYear(): string {
+    const date = new Date(this.currentYear, this.currentMonth, 1);
+    return date.toLocaleString('default', { month: 'long', year: 'numeric' });
+  }
 }
