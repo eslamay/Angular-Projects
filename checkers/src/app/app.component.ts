@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CheckerComponent } from "./components/checker/checker.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CheckerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
