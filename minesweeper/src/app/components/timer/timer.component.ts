@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TimerService } from '../../services/timer.service';
 
 @Component({
   selector: 'app-timer',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './timer.component.scss'
 })
 export class TimerComponent {
-
+constructor(public timerService: TimerService) {}
 }
