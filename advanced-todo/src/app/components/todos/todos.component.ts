@@ -28,7 +28,7 @@ export class TodosComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private todoService: TodoService
+    public todoService: TodoService
   ) {}
 
   ngOnInit(): void {
