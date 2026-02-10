@@ -3,10 +3,12 @@ import { Subscription } from 'rxjs';
 import { PdfGeneratorService } from '../../services/pdf-generator.service';
 import { ResumeDataService } from '../../services/resume-data.service';
 import { PhotoService } from '../../services/photo.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-resume',
-  imports: [],
+  imports: [CommonModule,FormsModule],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.scss'
 })
